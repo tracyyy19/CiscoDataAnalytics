@@ -1,0 +1,3484 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .SubStepNum {
+        text-indent: -25.5px;
+        margin-inline-start: 50px;
+      }
+      .component__content .component__body-inner .BodyTextL50 {
+        margin-inline-start: 30px;
+      }
+      .component__content .component__body-inner .Bulletlevel1 {
+        text-indent: -19px;
+        margin-inline-start: 48px;
+      }
+      .component__content .component__body-inner .Bulletlevel2 {
+          text-indent: -19px;
+          margin-inline-start: 72px;
+      }
+      .openTextBox__inner .openTextBox__widget .ReflectionQ, .component__content .component__body-inner .SubStepAlpha {
+          text-indent: -25.5px;
+          margin-inline-start: 30px;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article 63bc188178b2650018679889 remove-padding-top ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$818876937$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top ">
+        <div class="article__header ">
+          <div class="article__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$818876937$--><!---->
+                                    <block-view modelid="63bc188178b265001867988c" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bc188178b265001867988c" class="63bc188178b265001867988c block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bc188178b265001867988c" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+      <div class="block__title ">
+        <!--?lit$818876937$--><heading-view aria-hidden="true" id="63bc188178b265001867988c-heading-view" headingtitle="Lab - Create Visualizations in Excel" modelid="63bc188178b265001867988c" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="js-heading is-complete">
+        <div class="js-heading-inner" role="heading" id="block-heading" aria-level="1">
+        <span class="aria-label"> <!--?lit$818876937$-->Complete &nbsp;<!--?lit$818876937$-->Lab - Create Visualizations in Excel</span>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></heading-view>
+        <div tabindex="0" role="heading" class="block__title-inner " aria-level="3">
+          <span class="accessibility-completion-indicator"><!--?lit$818876937$-->Complete </span>
+          <!--?lit$818876937$-->Lab - Create Visualizations in Excel
+        </div>
+      </div>
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><text-view modelid="63bc188178b2650018679891" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bc188178b2650018679891" class="component text 63bc188178b2650018679891  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$818876937$--><h2>Objectives</h2><p>In this lab, you will create charts to visualize data in Microsoft Excel.</p><p><strong>Part 1: Creating a Line Chart</strong></p><p><strong>Part 2: Creating a Column Chart</strong></p><p><strong>Part 3: Creating a Pie Chart</strong></p><h2>Background / Scenario</h2><p>Data visualization assists with the analysis and interpretation of data by graphically presenting relationships, trends, and inferences that cannot always be clearly derived by examining the raw text and numeric values in a dataset.</p><p>This lab uses sample datasets to demonstrate three visualizations of that data.</p><h2>Required Resources</h2><ul><li>Mobile device or PC/laptop with a browser, Microsoft 365 Excel online, and internet access</li></ul><p><strong>Note</strong>: The precise steps to format and manipulate data in Excel can vary between platforms and versions. The instructions in this lab are based on the free version of Excel available from Office.com and may have to be modified to match the user’s platform, software, or version to achieve the results shown in this lab.</p></div>
+        </div>
+      </div>
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bc1d2c3b3fa00011c479be" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bc1d2c3b3fa00011c479be" class="63bc1d2c3b3fa00011c479be block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bc1d2c3b3fa00011c479be" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><text-view modelid="63bc1d2c3b3fa00011c479bf" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bc1d2c3b3fa00011c479bf" class="component text 63bc1d2c3b3fa00011c479bf  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$818876937$--><h3>Part 1: Creating a Line Chart</h3><p>This chart will display the Profit and Revenue for the years 2017, 2018, 2019, 2020 and 2021.</p><h4>Step 1: Download the data file</h4><ol start="1" style="list-style-type:lower-alpha"><li>Download the sample file <strong>Bike Sales_Visualizations_Lab.xlsx</strong> to your OneDrive. Open the downloaded file in MS 365 Excel.<p>This workbook contains four worksheets that each will be used separately throughout this lab.</p></li></ol><h4>Step 2: Insert the line chart.</h4><ol start="1" style="list-style-type:lower-alpha"><li>Select the <strong>Revenue and Profit by Year</strong> worksheet. The worksheet contains the profit and the revenue totals for each of the years 2017, 2018, 2019, 2020, and 2021.</li><li>Select the data in the cells <strong>A3 </strong>through to <strong>C8</strong>.</li><li>From the <strong>Insert </strong>menu, expand the ribbon using the down arrow on the right side of the ribbon, click the <strong>Line </strong>chart tool, then select Line with Markers (bottom left option)<p>This creates a line chart with an x-axis showing the years, and a y-axis dollar amounts.</p></li></ol><h4>Step 3: Format the chart.</h4><ol start="1" style="list-style-type:lower-alpha"><li>To improve the clarity of the chart, change the vertical axis to display USD currency.<ol><li>Right click on the chart and select <strong>Format</strong>. The <strong>Chart Format</strong> window pane opens on the right of the worksheet.</li><li>Expand the options for the <strong>Vertical Axis</strong>.</li><li>In the <strong>Number Format</strong> section change <strong>Category to Currency</strong> and change <strong>Decimal places</strong> to 0.</li></ol></li><li>Add a chart title<ol><li>In the Chart Format window pane, change the <strong>Chart Title</strong> option switch to the on position if it is not already and expand the <strong>Chart Title</strong> options.</li><li>Change the <strong>Chart Title</strong> to “Revenue vs. Profits”.</li><li>Keep the <strong>Title Position</strong> at the default which is <strong>Above</strong>.</li></ol></li><li>Change the Legend names to “Annual Profit” and “Annual Revenue”.<ol><li>Select cell B3 and change the column name to Annual Profit.</li><li>Select cell C3 and change the column name to Annual Revenue.<p>The legend names at the bottom of the chart should change to match the column names.</p></li></ol></li><li>Reposition the Legend to the right of the chart.<ol><li>Right click on the chart to bring up the Chart Format window pane.</li><li>Expand the options for <strong>Legend</strong>.</li><li>Change the <strong>Position </strong>option to <strong>Right</strong>.</li></ol></li><li>Add axis titles for both the vertical and horizontal axis..<ol><li>If necessary, right click on the chart to bring up the Chart Format window pane.</li><li>Expand the Horizontal Axis options.</li><li>Scroll down to the Axis Title and move the switch to the on position.</li><li>Add an axis title of “<strong>Year</strong>”.</li><li>Expand the options for the <strong>Vertical Axis</strong>.</li><li>Scroll down to the <strong>Axis Title</strong> and move the switch to the on position.</li><li>Add an axis title of “<strong>US Dollars</strong>”.<p>The finished chart should appear as shown below.</p></li></ol></li></ol></div>
+        </div>
+      </div>
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bc2099bd9de7003641f0e9" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bc2099bd9de7003641f0e9" class="63bc2099bd9de7003641f0e9 block background-color-white remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bc2099bd9de7003641f0e9" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><graphic-view modelid="63bc20a7bd9de7003641f0eb" class="is-left" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="graphic-inner component__inner">
+            <div data-socialgoodpulse-id="63bc20a7bd9de7003641f0eb" class="component graphic 63bc20a7bd9de7003641f0eb  is-left   ">
+                <div class="component__header-container">
+                    <base-view type="component" lowercase_component="graphic" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header graphic__header">
+          <div class="component__header-inner graphic__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+                <div class="component__widget">
+                    <!--?lit$818876937$-->
+                        <div class="graphic__image-container ">
+                            <img id="graphic__image" aria-hidden="false" tabindex="0" class="graphic__image js-graphic-set-image-src" src="data:image/png;base64,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" data-large="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/en-US/assets/e3a6e45689b94e9092e20e0d6b29f132.png" data-small="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/en-US/assets/e3a6e45689b94e9092e20e0d6b29f132.png" alt="de1-5.3.3-1">
+
+                            <!--?lit$818876937$-->
+
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></graphic-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bc227d78b2650018679895" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bc227d78b2650018679895" class="63bc227d78b2650018679895 block background-color-white remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bc227d78b2650018679895" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><text-view modelid="63bc227d78b2650018679896" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bc227d78b2650018679896" class="component text 63bc227d78b2650018679896  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$818876937$--><h3>Part 2: Creating a Column Chart</h3><h4>Step 1: Insert the Column Chart</h4><ol start="1" style="list-style-type:lower-alpha"><li>Select the <strong>Product Revenue by Country</strong> worksheet. The worksheet contains the revenue totals for each product category by country.</li><li>Select the data in the cells <strong>A3 </strong>through to <strong>E10</strong>.</li><li><p>From the <strong>Insert </strong>menu, click the <strong>Column</strong> chart tool, then select the<strong> Stacked Column</strong> (middle option)</p><p>This creates a column chart with an x-axis showing the country, and a y-axis showing dollar amounts.</p></li></ol><h4>Step 2: Format the chart.</h4><ol start="1" style="list-style-type:lower-alpha"><li>Using the same methods used for the line chart in Part 1 perform the following formatting changes to the chart.<ol><li>Give the chart a title of “Product Revenue by Country”.</li><li>Change the vertical axis <strong>Number Format </strong>to <strong>Currency</strong> and the <strong>Decimal Places</strong> to zero</li><li>Change the <strong>Position </strong>of the <strong>Legend </strong>to the <strong>Right</strong>.</li><li>Add a horizontal <strong>Axis Title</strong> of “Country”.</li><li>Add a vertical <strong>Axis Title</strong> of “US dollars”<p>Once completed the chart should appear as shown below.</p></li></ol></li></ol></div>
+        </div>
+      </div>
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bc238d78b2650018679898" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bc238d78b2650018679898" class="63bc238d78b2650018679898 block background-color-white remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bc238d78b2650018679898" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><graphic-view modelid="63bc238d78b2650018679899" class="is-left" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="graphic-inner component__inner">
+            <div data-socialgoodpulse-id="63bc238d78b2650018679899" class="component graphic 63bc238d78b2650018679899  is-left   ">
+                <div class="component__header-container">
+                    <base-view type="component" lowercase_component="graphic" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header graphic__header">
+          <div class="component__header-inner graphic__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+                <div class="component__widget">
+                    <!--?lit$818876937$-->
+                        <div class="graphic__image-container ">
+                            <img id="graphic__image" aria-hidden="false" tabindex="0" class="graphic__image js-graphic-set-image-src" src="data:image/png;base64,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" data-large="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/en-US/assets/30a2f40599344870babe55f15c36e6a8.png" data-small="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/en-US/assets/30a2f40599344870babe55f15c36e6a8.png" alt="de1-5.3.3-2">
+
+                            <!--?lit$818876937$-->
+
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></graphic-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bc23be78b265001867989e" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bc23be78b265001867989e" class="63bc23be78b265001867989e block background-color-white remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bc23be78b265001867989e" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><text-view modelid="63bc23bf78b265001867989f" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bc23bf78b265001867989f" class="component text 63bc23bf78b265001867989f  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$818876937$--><h3>Part 3: Creating a Pie Chart</h3><h4>Step 1: Insert the Pie Chart</h4><ol start="1" style="list-style-type:lower-alpha"><li>Select the <strong>Revenue by Age Group</strong> worksheet. The worksheet contains the revenue totals for each product category.</li><li>Select the data in the cells <strong>A3 </strong>through to <strong>B7</strong>.</li><li><p>From the <strong>Insert </strong>menu, click the <strong>Pie </strong>chart tool, then select the <strong>2D- Pie</strong> (top option)</p><p>This creates a pie chart with each age group represented by an area on the cart representative of the revenue for that group.</p></li></ol><h4>Step 2: Format the chart.</h4><ol start="1" style="list-style-type:lower-alpha"><li>Using the same methods used previously for the line and column carts make the following format changes:<ol><li>Give the chart a title of “Revenue Comparison by Age Group”.</li><li>Change the <strong>Position </strong>of the <strong>Legend </strong>to the <strong>Right</strong>.</li></ol></li><li>Add data labels to the chart area.<ol><li>In the <strong>Chart Format</strong> window expand the options for Series “Total:</li><li>Expand the options for <strong>Data Labels</strong>.</li><li>Check the boxes for <strong>Category Name</strong> and <strong>Percentage</strong>.<p>Once completed the chart should appear as shown below.</p></li></ol></li></ol></div>
+        </div>
+      </div>
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bc24c606763100d1322ae9" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bc24c606763100d1322ae9" class="63bc24c606763100d1322ae9 block background-color-white remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bc24c606763100d1322ae9" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><graphic-view modelid="63bc24c706763100d1322aea" class="is-left" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="graphic-inner component__inner">
+            <div data-socialgoodpulse-id="63bc24c706763100d1322aea" class="component graphic 63bc24c706763100d1322aea  is-left   ">
+                <div class="component__header-container">
+                    <base-view type="component" lowercase_component="graphic" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header graphic__header">
+          <div class="component__header-inner graphic__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+                <div class="component__widget">
+                    <!--?lit$818876937$-->
+                        <div class="graphic__image-container ">
+                            <img id="graphic__image" aria-hidden="false" tabindex="0" class="graphic__image js-graphic-set-image-src" src="data:image/png;base64,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" data-large="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/en-US/assets/68c1b8f654a64608ae4163ecc73557cc.png" data-small="./courses/ff9e491c-49be-4734-803e-a79e6e83dab1/3f17d57c-9d29-5802-97dc-9c794f0bca66/en-US/assets/68c1b8f654a64608ae4163ecc73557cc.png" alt="de1-5.3.3-3">
+
+                            <!--?lit$818876937$-->
+
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></graphic-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63c0dc865bf30200a98cd2e0" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63c0dc865bf30200a98cd2e0" class="63c0dc865bf30200a98cd2e0 block background-color-white remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63c0dc865bf30200a98cd2e0" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><opentextbox-view modelid="63c0dca25bf30200a98cd2e2" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="63c0dca25bf30200a98cd2e2" class="component opentextbox 63c0dca25bf30200a98cd2e2  is-full   ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="63c0dca25bf30200a98cd2e2" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+          <div class="component__header-inner openTextBox__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body openTextBox__body">
+          <div class="component__body-inner openTextBox__body-inner"><!--?lit$818876937$--><h2>Reflection Questions</h2></div>
+        </div>
+      </div>
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$818876937$--> <div class="openTextBox__preText"><!--?lit$818876937$-->Review each of the datasets given in this lab and select different options for each chart. Consider if the visualization of the data is enhanced, or not, with these different options.</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$818876937$-->Answer Area
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." aria-label="Type your answers here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$818876937$-->
+                      <!--?lit$818876937$-->Answer will vary.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$818876937$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$818876937$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$818876937$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="63bc24f85e64e000f15e7b71" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="block" style="width: 11.1111%;"><!---->
+                
+                <div data-socialgoodpulse-id="63bc24f85e64e000f15e7b71" class="63bc24f85e64e000f15e7b71 block background-color-white remove-padding-top remove-padding-bottom ">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="63bc24f85e64e000f15e7b71" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$818876937$--><!----><text-view modelid="63bc24f85e64e000f15e7b72" class="is-full" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="63bc24f85e64e000f15e7b72" class="component text 63bc24f85e64e000f15e7b72  is-full   ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$818876937$--><h2>Challenge Activity</h2><p>Explore the possibilities of using other datasets to produce different visualization charts.</p></div>
+        </div>
+      </div>
+            <!--?lit$818876937$-->
+            <!--?lit$818876937$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$818876937$-->
+                    </div>
+                </div>
+            </div>
+        <sgpluse-opentextboxcontroller-view modelid="" is-touch="false" fullscreen="true" device="medium" browser="Microsoft Edge" os="windows" dir="ltr" location="page" theme="dark" orientation="portrait" themetype="block-base-theme"><!---->
+            <div class="openTextBoxController__button-container">
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__showButton show-answer show"><!--?lit$818876937$-->Show All Answers</button>    
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__hideButton hide-answer hide"><!--?lit$818876937$-->Hide All Answers</button>    
+                <button class="btn-text resetbtn openTextBoxController__resetButton"><!--?lit$818876937$-->Clear My Responses</button>         
+            </div>
+            <!--?lit$818876937$--><hr>
+            <!--?lit$818876937$-->
+                <div class="post-text" tabindex="0">
+                    <!--?lit$818876937$-->© 2017 - 2023 Cisco and/or its affiliates. All rights reserved. Cisco Public
+                </div>
+                   
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style></sgpluse-opentextboxcontroller-view><style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}</style><script></script>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document?.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      let event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        ?.querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document?.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      ?.querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document?.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </body></html>
