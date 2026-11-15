@@ -2,7 +2,7 @@
 
 Hands-on labs and a capstone dashboard completed as part of the **Cisco Data Analytics** coursework. The projects use a bike sales dataset to practice the core data analyst workflow in Excel: **preparing, cleaning, manipulating, analyzing, and visualizing data**.
 
-![Bike Sales December Dashboard](BikeSaleforDecDashboard.png)
+![Bike Sales December Dashboard](BikeSalesforDec2021_dashboard.png)
 
 ## Table of Contents
 
@@ -68,7 +68,7 @@ Combined the 2021 and 2022 sales files into `BikeSales_Consolidated.xlsx` and us
 
 ## Dashboard
 
-The final dashboard visualizes bike sales for December. See [`BikeSaleforDecDashboard.png`](BikeSaleforDecDashboard.png) for a preview, or open `BikeSales_Consolidated.xlsx` to explore the underlying data.
+The final dashboard visualizes bike sales for December. See [`BikeSaleforDecDashboard.png`](BikeSalesforDec2021_dashboard.png) for a preview, or open `BikeSales_Consolidated.xlsx` to explore the underlying data.
 
 ## Getting Started
 
